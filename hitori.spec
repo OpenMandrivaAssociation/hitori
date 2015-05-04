@@ -40,15 +40,14 @@ It has support for anything from 5×5 to 10×10 grids.
 %install
 %makeinstall_std
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
 %doc AUTHORS ChangeLog COPYING COPYING-DOCS MAINTAINERS NEWS README
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%dir %{_datadir}/%{name}/
-%{_datadir}/%{name}/
 %{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
 %{_datadir}/appdata/%{name}.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.%{name}.gschema.xml
 
