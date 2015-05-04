@@ -1,8 +1,8 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		hitori
-Version:	3.14.2.1
-Release:	%mkrel 1
+Version:	3.16.1
+Release:	1
 Summary:	Logic puzzle game for GNOME
 
 Group:		Games/Puzzles
@@ -34,13 +34,13 @@ It has support for anything from 5×5 to 10×10 grids.
 %setup -q
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
 %makeinstall_std
 
-%find_lang %{name} --with-help
+%find_lang %{name}
 
 %files -f %{name}.lang
 %doc AUTHORS ChangeLog COPYING COPYING-DOCS MAINTAINERS NEWS README
