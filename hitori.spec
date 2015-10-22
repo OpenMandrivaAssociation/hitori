@@ -1,5 +1,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
+%define _disable_rebuild_configure 1
+
 Name:		hitori
 Version:	3.16.1
 Release:	3
