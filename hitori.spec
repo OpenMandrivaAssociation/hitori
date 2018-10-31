@@ -4,7 +4,7 @@
 
 Name:		hitori
 Version:	3.16.2
-Release:	3
+Release:	4
 Summary:	Logic puzzle game for GNOME
 
 Group:		Games/Puzzles
