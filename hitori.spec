@@ -3,7 +3,7 @@
 %define _disable_rebuild_configure 1
 
 Name:		hitori
-Version:	3.22.4
+Version:	3.32.0
 Release:	1
 Summary:	Logic puzzle game for GNOME
 
@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gmodule-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	intltool >= 0.35.0
+BuildRequires:  meson
 Requires:	hicolor-icon-theme
 
 %description
@@ -36,19 +37,19 @@ It has support for anything from 5×5 to 10×10 grids.
 %setup -q
 
 %build
-%configure
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc AUTHORS ChangeLog COPYING COPYING-DOCS MAINTAINERS NEWS README
+%doc AUTHORS MAINTAINERS NEWS README.md
+%license COPYING COPYING-DOCS
 %{_bindir}/%{name}
-%{_datadir}/applications/org.gnome.Hitori.desktop
-%{_iconsdir}/hicolor/*/apps/org.gnome.Hitori.png
-%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Hitori-symbolic.svg
-%{_datadir}/appdata/org.gnome.Hitori.appdata.xml
+%{_datadir}/applications/org.gnome.*.desktop
+%{_iconsdir}/hicolor/*/apps/org.gnome.*
+%{_datadir}/metainfo/org.gnome.*.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.%{name}.gschema.xml
