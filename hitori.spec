@@ -3,7 +3,7 @@
 %define _disable_rebuild_configure 1
 
 Name:		hitori
-Version:	3.38.2
+Version:	3.38.3
 Release:	1
 Summary:	Logic puzzle game for GNOME
 
